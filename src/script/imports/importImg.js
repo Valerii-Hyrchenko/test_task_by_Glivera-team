@@ -1,0 +1,9 @@
+import "../../img/icons/3d-square.svg";
+import "../../img/icons/discount-shape.svg";
+import "../../img/icons/key.svg";
+import "../../img/icons/money.svg";
+import "../../img/icons/question.svg";
+import "../../img/icons/user.svg";
+import "../../img/icons/arrow.svg";
+import "../../img/logo/logo.svg";
+import "../../img/icons/user-avatar.png";

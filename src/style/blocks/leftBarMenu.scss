@@ -1,0 +1,183 @@
+.menu {
+  &-container {
+    padding: 36px 28px 0;
+    width: 250px;
+    background-color: #ffffff;
+    height: 97%;
+    position: relative;
+    z-index: 10;
+
+    @include adaptive1380 {
+      position: absolute;
+      top: 10px;
+      left: 6px;
+      height: 80%;
+      display: none;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+      animation-name: "show-burger-menu";
+      animation-duration: 700ms;
+      transition-timing-function: linear;
+
+      @keyframes show-burger-menu {
+        0% {
+          transform: translateY(-500px);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    @include adaptive1000 {
+      height: 30%;
+    }
+
+    @include adaptive420 {
+      height: 40%;
+    }
+
+    &--delete-anim {
+      animation-name: "hide-burger-menu";
+      animation-duration: 700ms;
+      transition-timing-function: linear;
+
+      @keyframes hide-burger-menu {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-500px);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &-logo {
+    display: flex;
+    align-items: flex-end;
+
+    @include adaptive1380 {
+      margin-top: 17px;
+    }
+
+    & > p {
+      margin: 0 0 7px 4px;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 15px;
+      letter-spacing: -0.01em;
+      color: $logo-text;
+    }
+  }
+
+  &-list {
+    margin-top: 53px;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 8px;
+      padding-right: 8px;
+      cursor: pointer;
+      box-sizing: border-box;
+      border: 1px solid transparent;
+      transition: all 200ms linear;
+      -webkit-tap-highlight-color: transparent;
+
+      &:hover {
+        border: 1px solid $base-violet;
+        transition: all 400ms linear;
+      }
+
+      &:first-of-type {
+        border: none;
+        & > img {
+          display: none;
+        }
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 18px;
+      }
+
+      &-wrap {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        & > img {
+          padding: 10px 0 10px 11px;
+        }
+      }
+
+      &-title {
+        padding: 11px 0 12px 14px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        letter-spacing: -0.01em;
+        width: 100%;
+        color: #9197b3;
+      }
+
+      &--active {
+        background-color: $base-violet;
+        & > div > p {
+          color: $base-white;
+        }
+        & > img,
+        & > div > img {
+          filter: brightness(0) invert(1);
+        }
+        animation-name: "show-active-btn";
+        animation-duration: 500ms;
+        transition-timing-function: linear;
+
+        @keyframes show-active-btn {
+          0% {
+            max-width: 0;
+          }
+          100% {
+            max-width: 250px;
+          }
+        }
+      }
+    }
+  }
+
+  &-user-wrap {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 78px;
+    left: 28px;
+  }
+
+  &-user-info {
+    &-container {
+      margin-left: 12px;
+    }
+
+    &-name {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.01em;
+    }
+
+    &-jobTitle {
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+      color: #757575;
+    }
+  }
+}

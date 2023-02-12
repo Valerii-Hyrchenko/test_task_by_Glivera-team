@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title CRM_Dashboard_Customers
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap", rel="stylesheet")
+
+  - let arrow = "./img/arrow.svg";
+  - let logoConfig = {img: "./img/logo.svg", version: "v.01"};
+  - let userConfig = {avatar: "./img/user-avatar.png", name: "Evano", jobTitle: "Project Manager"};
+  - 
+    let menuConfig = [
+      {img: "./img/3d-square.svg", title: "Dashboard"},
+      {img: "./img/discount-shape.svg", title: "Product"},
+      {img: "./img/key.svg", title: "Customers"},
+      {img: "./img/money.svg", title: "Income"},
+      {img: "./img/question.svg", title: "Promote"},
+      {img: "./img/user.svg", title: "Help"}
+    ];
+  
+  body
+    .container
+      .burger-menu-wrap
+        input(type="checkbox" id="menu-checkbox" class="burger-menu-checkbox")
+        label(for="menu-checkbox" class="burger-menu-checkbox-label")
+          - let i=0;
+            while (i++ < 3)
+              .burger-menu-fake-input
+        .burger-outside-space#outside-space
+      .menu-container#menu-container
+        .menu-logo
+          img(src=logoConfig.img, alt="logo-icon")
+          p.logo-version=logoConfig.version
+        ul.menu-list
+          each val in menuConfig
+            li.menu-list__item(id=val.title)
+              .menu-list__item-wrap
+                img(src=val.img, alt="menu-item-icon")
+                p.menu-list__item-title=val.title
+              img(src=arrow, alt="arrow-icon")
+        .menu-user-wrap
+          img(src=userConfig.avatar, alt="user-icon")
+          .menu-user-info-container
+            p.menu-user-info-name=userConfig.name
+            p.menu-user-info-jobTitle=userConfig.jobTitle
+      .crm-data#crm-data
+        .crm-data-preloader#preloader
+          - let j=0;
+            while (j++ < 4)
+              div
+        .crm-data-title
+          h2= "Hello " + userConfig.name + " 👋🏼"
+        .app-wrapper#app-wrapper
+
+          

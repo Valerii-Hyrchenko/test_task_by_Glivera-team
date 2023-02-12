@@ -1,0 +1,336 @@
+.customers {
+  padding: 30px 44px 0 38px;
+  background: $base-white;
+  box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+  border-radius: 30px;
+  width: 886px;
+
+  @include adaptive1000 {
+    width: 550px;
+    margin: 0 auto;
+  }
+
+  @include adaptive667 {
+    width: 400px;
+  }
+
+  @include adaptive512 {
+    padding: 20px 30px 0 30px;
+    width: 340px;
+  }
+
+  @include adaptive420 {
+    padding: 20px 20px 0 20px;
+    width: 320px;
+  }
+
+  @include adaptive375 {
+    padding: 20px 14px 0 14px;
+    width: 300px;
+  }
+
+  @include adaptive360 {
+    width: 283px;
+    padding: 20px 8px 0 8px;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+
+    &-title {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 33px;
+      letter-spacing: -0.01em;
+
+      @include adaptive420 {
+        font-size: 21px;
+        line-height: 30px;
+      }
+      @include adaptive360 {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.01em;
+      color: $base-light-green;
+    }
+
+    &-search {
+      position: relative;
+      & > img {
+        position: absolute;
+        top: 7px;
+        left: 8px;
+      }
+      & > input {
+        box-sizing: border-box;
+        width: 216px;
+        background: $input-bg;
+        border-radius: 10px;
+        padding: 9px 5px 9px 40px;
+        font-size: 12px;
+        font-family: "Poppins";
+        line-height: 18px;
+        letter-spacing: -0.01em;
+        outline: none;
+        border: 1px solid transparent;
+
+        &:focus {
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        &::placeholder {
+          color: $base-grey;
+        }
+
+        @include adaptive667 {
+          width: 185px;
+        }
+
+        @include adaptive512 {
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  &-data {
+    display: grid;
+    grid-template-rows: 0.72fr repeat(8, 1fr);
+    grid-template-columns: 2.5fr repeat(2, 2fr) 3.2fr 1.8fr 1.2fr;
+    align-items: center;
+    gap: 0;
+    margin: 0 auto;
+    animation-name: "showCustomers";
+    animation-duration: 700ms;
+    transition-timing-function: linear;
+
+    @keyframes showCustomers {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @include adaptive1000 {
+      grid-template-rows: repeat(48, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-info,
+    &-title {
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.01em;
+      color: $base-dark;
+      padding: 24px 10px;
+      white-space: nowrap;
+      border-bottom: 1px solid $base-light-grey;
+
+      @include adaptive1000 {
+        padding: 10px 6px;
+      }
+
+      @include adaptive420 {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 6px 3px;
+      }
+    }
+
+    &-title {
+      color: $base-grey;
+      padding: 14px 8px;
+
+      @include adaptive1000 {
+        padding: 10px 6px;
+      }
+
+      @include adaptive420 {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 6px 3px;
+      }
+
+      &:first-of-type {
+        margin-left: -38px;
+        padding-left: 46px;
+
+        @include adaptive1000 {
+          padding-left: 6px;
+          margin-left: 0;
+        }
+      }
+
+      &:nth-of-type(6) {
+        margin-right: -44px;
+        padding-left: 15px;
+      }
+
+      @include adaptive1000 {
+        &--status {
+          border-bottom: 4px solid $base-bottom-border;
+        }
+      }
+    }
+
+    &-info-btn-wrap {
+      height: 100%;
+      box-sizing: border-box;
+      border-bottom: 1px solid $base-light-grey;
+
+      @include adaptive1000 {
+        border-bottom: 4px solid $base-bottom-border;
+      }
+    }
+
+    &-info-btn {
+      margin-top: 20px;
+      display: block;
+      width: 80px;
+      font-family: "Poppins";
+      height: 29px;
+      background: $btn-status-bg;
+      border: 1px solid $btn-status-border;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      cursor: pointer;
+      letter-spacing: -0.01em;
+      color: $base-dark-green;
+      animation-name: "activeBtn";
+      animation-duration: 400ms;
+      transition-timing-function: linear;
+
+      @keyframes activeBtn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @include adaptive1000 {
+        margin-top: 5px;
+      }
+
+      @include adaptive420 {
+        margin-top: 0;
+        font-size: 12px;
+      }
+    }
+
+    &-inactive-btn {
+      background: $base-light-red;
+      color: $base-red;
+      border: 1px solid $base-red;
+
+      animation-name: "inactiveBtn";
+      animation-duration: 400ms;
+      transition-timing-function: linear;
+
+      @keyframes inactiveBtn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 30px 0 40px;
+
+    @include adaptive1000 {
+      flex-direction: column-reverse;
+    }
+
+    @include adaptive420 {
+      padding: 20px 0 30px;
+    }
+    &-statistics {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: -0.01em;
+      color: $base-grey;
+
+      @include adaptive1000 {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-btn {
+      padding: 0;
+      box-sizing: border-box;
+      width: 26px;
+      height: 24px;
+      background: $btn-pages-bg;
+      border: 1px solid $base-light-grey;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: -0.01em;
+      color: $btn-pages-txt;
+
+      &:not(:last-child) {
+        margin-right: 12px;
+
+        @include adaptive360 {
+          margin-right: 10px;
+        }
+      }
+
+      &--prev > svg,
+      &--next > svg {
+        padding-bottom: 2px;
+      }
+
+      &--dots1,
+      &--dots2 {
+        background-color: $base-white;
+        width: 18px;
+        border: none;
+
+        @include adaptive512 {
+          display: none;
+        }
+      }
+
+      &--active {
+        background-color: $base-violet;
+        color: $base-white;
+        animation-name: "activeBtn";
+        animation-duration: 700ms;
+        transition-timing-function: linear;
+
+        @keyframes activeBtn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

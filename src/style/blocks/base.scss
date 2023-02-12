@@ -1,0 +1,144 @@
+@mixin adaptive1380 {
+  @media (max-width: 1380px) {
+    @content;
+  }
+}
+
+@mixin adaptive1000 {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin adaptive667 {
+  @media (max-width: 667px) {
+    @content;
+  }
+}
+
+@mixin adaptive512 {
+  @media (max-width: 512px) {
+    @content;
+  }
+}
+
+@mixin adaptive420 {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
+@mixin adaptive375 {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin adaptive360 {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+body {
+  background-color: $body-bg;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  height: 1200px;
+  margin: 0 auto;
+  background-color: $app-bg;
+  display: flex;
+  position: relative;
+
+  @include adaptive1380 {
+    max-width: 1000px;
+    height: 935px;
+  }
+
+  @include adaptive1000 {
+    max-width: 665px;
+    height: 2512px;
+  }
+
+  @include adaptive667 {
+    width: 510px;
+    height: 2501px;
+  }
+
+  @include adaptive512 {
+    width: 420px;
+    height: 2469px;
+  }
+
+  @include adaptive420 {
+    height: 1919px;
+    width: 375px;
+  }
+
+  @include adaptive375 {
+    width: 360px;
+  }
+
+  @include adaptive360 {
+    width: 320px;
+    height: 1915px;
+  }
+}
+
+.app-wrapper {
+  margin-left: 71px;
+  position: relative;
+  width: 100%;
+
+  @include adaptive1380 {
+    margin-left: 16px;
+  }
+
+  @include adaptive1000 {
+    margin-left: 0;
+  }
+}
+
+.crm-data {
+  width: 100%;
+
+  &-title > h2 {
+    margin: 41px 0 51px 71px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+
+    @include adaptive1380 {
+      margin: 40px 0 30px 80px;
+    }
+
+    @include adaptive667 {
+      margin: 40px 0 20px 75px;
+    }
+
+    @include adaptive512 {
+      margin: 20px 0px 18px 87px;
+    }
+  }
+}
+
+.temporary-text {
+  @include adaptive1380 {
+    margin-left: 67px;
+  }
+  @include adaptive1000 {
+    margin-left: 82px;
+  }
+  @include adaptive420 {
+    font-size: 14px;
+  }
+  @include adaptive375 {
+    margin-left: 65px;
+  }
+  @include adaptive360 {
+    font-size: 12px;
+  }
+}

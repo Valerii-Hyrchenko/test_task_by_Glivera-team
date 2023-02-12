@@ -1,0 +1,25 @@
+$base-violet: #5932ea;
+$base-violet-light: rgb(127, 97, 237);
+$base-red: #df0404;
+$base-light-red: #ffc5c5;
+$base-white: #ffffff;
+$base-dark-green: #008767;
+$base-light-green: #16c098;
+$base-grey: #b5b7c0;
+$base-light-grey: #eeeeee;
+$base-bottom-border: #999fa3;
+$base-dark: #292d32;
+$logo-text: #838383;
+$btn-status-border: #00b087;
+$btn-status-bg: rgba(22, 192, 152, 0.38);
+$btn-pages-bg: #f5f5f5;
+$btn-pages-txt: #404b52;
+$input-bg: #f9fbff;
+$body-bg: #f7f4ff;
+$app-bg: #fafbff;
+
+@import "./blocks/base.scss";
+@import "./blocks/burgerCheckbox.scss";
+@import "./blocks/leftBarMenu.scss";
+@import "./blocks//preloader.scss";
+@import "./blocks/customersLayout.scss";
